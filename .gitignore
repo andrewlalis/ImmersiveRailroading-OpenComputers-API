@@ -5,3 +5,5 @@ mvnw.*
 *.iml
 
 target
+
+*.sqlite
