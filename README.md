@@ -13,4 +13,4 @@ Each time a piece of rolling stock (locomotive or railway wagon / passenger car)
 By setting up a computer connected to such a detector augment, every time a rolling stock moves over the detector an HTTP request can be sent to the API to record the data. This way, users can query the API to get the most up-to-date information about where a piece of rolling stock is in their system, and what it's currently doing.
 
 ## Rail Networks as a Graph
-
+In computer-science terms, any rail network can be represented as a directed, weighted graph, where each switching point is a node, and each rail line is a branch (with its weight being equal to the distance between the two switches it connects). By using this representation, it's possible to track trains more precisely than with just a big map of coordinates. Any train can be automatically routed to any station in the network (provided there's an actual valid route) via the shortest possible route. And, this can be done fully automatically, too.
