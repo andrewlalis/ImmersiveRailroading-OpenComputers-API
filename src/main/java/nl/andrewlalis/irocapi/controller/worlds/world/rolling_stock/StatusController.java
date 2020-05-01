@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import nl.andrewlalis.irocapi.dao.WorldRepository;
 import nl.andrewlalis.irocapi.dto.rolling_stock.StatusPayload;
+import nl.andrewlalis.irocapi.dto.rolling_stock.StatusResponse;
 import nl.andrewlalis.irocapi.model.World;
 import nl.andrewlalis.irocapi.model.rolling_stock.Status;
 import nl.andrewlalis.irocapi.service.StatusRecordingService;
@@ -27,7 +28,7 @@ public class StatusController {
 	@PostMapping(
 			consumes = MediaType.APPLICATION_JSON_VALUE
 	)
-	public ResponseEntity<Object> post(
+	public ResponseEntity<StatusResponse> post(
 			@PathVariable String token,
 			@PathVariable String uuid,
 			@RequestBody StatusPayload payload
@@ -36,6 +37,6 @@ public class StatusController {
 		World world = this.worldRepository.findByToken(token)
 				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
 		Status status = this.statusRecordingService.saveStatus(world, uuid, payload);
-		return new ResponseEntity<>(status, HttpStatus.CREATED);
+		return new ResponseEntity<>(new StatusResponse(status), HttpStatus.CREATED);
 	}
 }
