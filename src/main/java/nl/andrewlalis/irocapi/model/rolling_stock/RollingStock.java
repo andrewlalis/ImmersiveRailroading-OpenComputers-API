@@ -1,5 +1,6 @@
 package nl.andrewlalis.irocapi.model.rolling_stock;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -36,6 +37,7 @@ public class RollingStock extends BaseEntity {
 	private World world;
 
 	@OneToMany(mappedBy = "rollingStock", orphanRemoval = true, cascade = CascadeType.ALL)
+	@JsonIgnore
 	private Set<Status> statuses;
 
 	public RollingStock(World world, String uuid, String jsonRollingStockId, String name, int cargoSize) {

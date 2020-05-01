@@ -1,5 +1,6 @@
 package nl.andrewlalis.irocapi.model.rolling_stock;
 
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import nl.andrewlalis.irocapi.model.BaseEntity;
@@ -15,6 +16,7 @@ import javax.persistence.ManyToOne;
  */
 @Entity
 @NoArgsConstructor
+@Getter
 public class Status extends BaseEntity {
 	@ManyToOne(optional = false)
 	private RollingStock rollingStock;

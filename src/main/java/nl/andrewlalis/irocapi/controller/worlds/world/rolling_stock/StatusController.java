@@ -17,7 +17,7 @@ import org.springframework.web.server.ResponseStatusException;
  * Controller that handles receiving status updates from various detectors throughout worlds.
  */
 @RestController
-@RequestMapping("/worlds/{token}/rolling_stock/{uuid}/status")
+@RequestMapping("/worlds/{token}/rolling_stocks/{uuid}/status")
 @RequiredArgsConstructor
 @Slf4j
 public class StatusController {
