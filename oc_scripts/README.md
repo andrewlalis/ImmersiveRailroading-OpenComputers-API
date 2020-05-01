@@ -20,3 +20,5 @@ To keep track of where your trains are, the simplest way to do so is to lay down
 * Starts a new thread.
 * In that thread, the detector's data is first processed into the format required by the API.
 * Then, the data is converted to a JSON string and posted.
+
+> Install it from [pastebin](https://pastebin.com/Y6TL2YAD): `pastebin get Y6TL2YAD detector.lua` Don't forget to install json.lua as well.
