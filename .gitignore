@@ -7,3 +7,4 @@ mvnw.*
 target
 
 *.sqlite
+*.sqlite-journal
