@@ -45,6 +45,15 @@ public class StatusRecordingService {
 		);
 	}
 
+	/**
+	 * Retrieves an existing rolling stock by its UUID and updates its data, or
+	 * creates a whole new entity.
+	 * @param world The world in which the rolling stock exists.
+	 * @param uuid The UUID of the rolling stock.
+	 * @param payload The posted data from the client, with some information
+	 *                about the rolling stock.
+	 * @return The rolling stock entity with the given UUID.
+	 */
 	private RollingStock getOrUpdateRollingStock(World world, String uuid, StatusPayload payload) {
 		Optional<RollingStock> optionalRollingStock = this.rollingStockRepository.findByUuid(uuid);
 		RollingStock rollingStock;
