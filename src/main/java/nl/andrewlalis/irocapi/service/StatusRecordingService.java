@@ -31,7 +31,7 @@ public class StatusRecordingService {
 	 */
 	public Status saveStatus(World world, String uuid, StatusPayload payload) {
 		RollingStock rollingStock = this.getOrUpdateRollingStock(world, uuid, payload);
-		log.info("Saving new status for rolling stock with UUID: {}.", uuid);
+		log.info("Status updated. UUID: {}, Name: {}, World: {}.", uuid, rollingStock.getName(), world.getName());
 		return this.statusRepository.save(
 				new Status(
 						rollingStock,

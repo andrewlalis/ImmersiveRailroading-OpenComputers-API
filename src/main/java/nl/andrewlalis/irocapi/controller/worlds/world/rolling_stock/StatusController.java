@@ -33,7 +33,6 @@ public class StatusController {
 			@PathVariable String uuid,
 			@RequestBody StatusPayload payload
 	) {
-		log.info("Received status post");
 		World world = this.worldRepository.findByToken(token)
 				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
 		Status status = this.statusRecordingService.saveStatus(world, uuid, payload);
